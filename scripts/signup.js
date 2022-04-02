@@ -11,6 +11,7 @@ $("#sButton").click(function(e){
   e.preventDefault();
    console.log("I'm in the sign-up form");
   validateFirstName();
+  validateLastName();
 
 })
 
@@ -32,6 +33,28 @@ function validateFirstName() {
   }else if(firstName.match(exAlpha)){
     inputFirstName.removeClass("inputError");
     $("#firstNameError").html("").removeClass("textError");
+    result = true
+  }
+  return result;
+}
+
+function validateLastName() {
+  let lastName = inputLastName.val();
+  let exNum = /\d/; //regex to find numbers in name;
+  let exAlpha = /^[A-Za-z]+$/ //regex to include all letters and ensure no space 
+
+  let result = true;
+  if (lastName == "") {
+   inputLastName.addClass("inputError");
+   $("#lastNameError").html("Last name cannot be blank.").addClass("errorText");
+   result = false;
+  }else if(lastName.match(exNum)){
+    inputLastName.addClass("inputError");
+    $("#lastNameError").html("Last name cannot contain a number").addClass("errorText");
+    result = false;
+  }else if(lastName.match(exAlpha)){
+    inputLastName.removeClass("inputError");
+    $("#lastNameError").html("").removeClass("textError");
     result = true
   }
   return result;
