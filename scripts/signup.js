@@ -6,15 +6,31 @@ let inputPass = $("#password");
 let inputConfirmPass = $("#confirmPass");
 let sButton = $("sButton");
 
-//event listener calls to validation functions.
+//event listener calls to validation functions, and submits form if 
 $("#sButton").click(function (e) {
   e.preventDefault();
 
-  validateFirstName();
-  validateLastName();
-  validateEmail();
-  validatePassword();
-  confirmPassword();
+  let firstName="";
+  let lastName="";
+  let email="";
+  let password ="";
+  let confirm ="";
+
+  if(validateFirstName()) firstName = inputFirstName.val();
+  if(validateLastName()) lastName = inputLastName.val();
+  if(validateEmail()) email = inputEmail.val();
+  if (validatePassword()) password = inputPass.val();
+  if(confirmPassword()) confirm = inputConfirmPass.val();
+
+  if(firstName != "" && lastName != "" && email != "" && password != "" && confirm != ""){
+    alert("First Name: " + firstName + 
+    "; Last Name: " + lastName +
+    "; Email: " + email +
+    "; Password: " + password);
+
+    window.location.href = "providers.html";
+  }
+  
 });
 
 //validate first name
@@ -161,67 +177,3 @@ function confirmPassword(){
   return result;
 }
 
-// function validatePassword(password, confirmPass) {
-//   console.log(
-//     "password and confirm password are: " + password + " " + confirmPass
-//   );
-
-//    if (password.length < 8 || password.length > 20) {
-//      alert("password too short");
-//     inputPass.style.border = "3px solid red";
-//     pTag.innerHTML="Password must be between 8-20 characters long";
-//     inputPass.appendChild(pTag);
-//     inputPass.focus();
-
-//      return false;
-//    }else if(!/[a-zA-Z]/.test(password)){
-//      alert("missing a letter");
-//     inputPass.style.border = "3px solid red";
-//     pTag.innerHTML="Password contain a letter.";
-//     inputPass.appendChild(pTag);
-//     return false;
-//    } else if(!(/\d/.test(password))){
-//      alert("missing a number");
-//     inputPass.style.border = "3px solid red";
-//     pTag.innerHTML="Password must contain a number.";
-//     inputPass.appendChild(pTag);
-//     return false;
-//    }
-
-//   if (password == "") {
-//     console.log("no password entered");
-//     alert("You must enter your password");
-//     //change this to display red text border around field
-//     //and error message below input field
-//     inputPass.style.border = "3px solid red";
-//     pTag.innerHTML="You must create a password";
-//     inputPass.appendChild(pTag);
-//     inputPass.focus();
-//     return false;
-//   }
-
-//   if (confirmPass == "") {
-//     console.log("no confirm password entered");
-//     alert("You must confirm your password");
-//     //change this to display red text border around field
-//     //and error message below input field
-//     inputConfirmPass.style.border = "3px solid red";
-//     pTag.innerHTML="You must confirm your password";
-//     inputConfirmPass.appendChild(pTag);
-//     inputConfirmPass.focus();
-
-//     return false;
-//   }
-
-//   //need to test this w/data
-//   if (password != confirmPass) {
-//    alert("Passwords must match");
-//    console.log("passwords don't match.")
-//     inputPass.style.border = "3px solid red";
-//     pTag.innerHTML="Your password must match";
-//     inputPass.appendChild(pTag);
-//     inputPass.focus();
-//     return false;
-//   }
-//   return true;
-// }
