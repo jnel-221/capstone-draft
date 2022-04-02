@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/signup.js" defer></script>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="row">
+        <div class="col-sm-6 m-auto card-container">
+          <div class="card" id="regCard">
+            <div class="card-body">
+              <form id="regForm">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <label for="firstName" class="form-label"
+                        >First Name</label
+                      >
+                      <input
+                        type="text"
+                        id="firstName"
+                        class="form-control"
+                        placeholder="First Name"
+                        name="firstName"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <label for="lastName" class="form-label">Last Name</label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        class="form-control"
+                        placeholder="Last Name"
+                        name="lastName"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    name="email"
+                  />
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPass"
+                  />
+                </div>
+                <center>
+                  <button type="submit" class="btn" id="sButton">
+                    Create Account
+                  </button>
+                </center>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--       <ul>
+          <h3>Exercise Requirements</h3>
+          <li>Create Account/User Registration Form</li>
+          <li>takes in a first name, last name, email address, password, confirm password</li>
+          <li>submit button that when clicked executes a validate function (can be done as onsubmit in the form tag or added as an event listener)</li>
+          <li>recommendation is using BOOTSTRAP and JQUERY, but not required...</li>
+          <li>when user corrects their input mistakes, remove any/all error formatting & border color</li>
+        </ul>
+
+        <ul>
+            <h3>Validation Requirements</h3>
+            <li>All fields are required, do not use the 'required' attribute on the html tag as we want to do this w/JavaScript</li>
+            <li>First Name field should not contain a space, achieve this w/a regex in Javascript</li>
+            <li>Optional: find a pre-built regex on internet and use it to validate the email address is proper</li>
+            <li>Password and confirm password are both required and must be the same (two different error messages)</li>
+            <li>Password must contain a min of 8 and a max of 20 chars, a letter and a number</li>
+            <li>if validates properly show an alert that says something nice</li>
+        </ul>
+
+        <ul>
+            <h3>Error Messages</h3>
+            <li>each field that has an error, use CSS to make the border of the input box red</li>
+            <li>under each input box, print/create/insert  HTML & CSS to show an error message of what is wrong with the input (does this for each input box, ie "First Name is Required"; slightly smaller font, colorful?)</li>
+            <li>try to make the message left aligned with the input box</li>
+            <li>EXTREME STRETCH: execute the password validation checks on each key press and alter the error messages as the password is being typed</li>
+        </ul>
+        <a href="https://www.w3schools.com/jsref/jsref_match.asp">jsref jsref_match</a>
+        <a href="https://regex101.com/">Regex101</a> -->
