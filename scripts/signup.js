@@ -13,6 +13,7 @@ $("#sButton").click(function (e) {
   validateFirstName();
   validateLastName();
   validateEmail();
+  validatePassword();
 });
 
 //validate first name
@@ -96,6 +97,47 @@ function validateEmail() {
 
   return result;
 }
+
+function validatePassword(){
+  let password = inputPass.val();
+  let lower = /[a-z]/; //regex for lower case
+  let upper = /[A-Z]/; //regex for upper case
+  let num = /\d/; //regex for numbers
+  let special = /[@$!%*#?&]/; //regex for special characters
+  let result = true;
+
+  console.log(password);
+  if(password == ""){
+    inputPass.addClass("inputError");
+    $("#passwordError").html("Password cannot be blank.").addClass("errorText");
+    result = false;
+  }else if (password.length < 8 || password.length > 20){
+    inputPass.addClass("inputError");
+    $("#passwordError").html("Password must be between 8-20 characters long").addClass("errorText");
+    result = false;
+  } else if(!password.match(lower)){
+    inputPass.addClass("inputError");
+    $("#passwordError").html("Password must contain at least one lower-case letter").addClass("errorText");
+    result = false;
+  }else if(!password.match(upper)){
+    inputPass.addClass("inputError");
+    $("#passwordError").html("Password must contain at least one upper-case letter").addClass("errorText");
+    result = false;
+  }else if(!password.match(num)){
+    inputPass.addClass("inputError");
+    $("#passwordError").html("Password must contain at least one number").addClass("errorText");
+    result = false;
+  }else if(!password.match(special)){
+    inputPass.addClass("inputError");
+    $("#passwordError").html("Password must contain at least one special character (@$!%*#?&)").addClass("errorText");
+    result = false;
+  } else{
+    inputPass.removeClass("inputError");
+    $("#passwordError").html("").removeClass("errorText");
+    result = true;
+  }
+  return result;
+} 
 
 // function validatePassword(password, confirmPass) {
 //   console.log(
