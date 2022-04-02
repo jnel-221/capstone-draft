@@ -6,7 +6,7 @@ let inputPass = $("#password");
 let inputConfirmPass = $("#confirmPass");
 let sButton = $("sButton");
 
-//event listener calls to validation functions, and submits form if 
+//event listener calls to validation functions, if form is valid, will alert field values and redirect to provider page.
 $("#sButton").click(function (e) {
   e.preventDefault();
 
@@ -66,8 +66,8 @@ function validateLastName() {
   let lastName = inputLastName.val();
   let exNum = /\d/; //regex to find numbers in name;
   let exAlpha = /^[A-Za-z]+$/; //regex to include all letters and ensure no space
-
   let result = true;
+
   if (lastName == "") {
     inputLastName.addClass("inputError");
     $("#lastNameError")
@@ -122,7 +122,7 @@ function validatePassword(){
   let num = /\d/; //regex for numbers
   let special = /[@$!%*#?&]/; //regex for special characters
   let result = true;
-  //console.log(password);
+  
   if(password == ""){
     inputPass.addClass("inputError");
     $("#passwordError").html("Password cannot be blank.").addClass("errorText");
