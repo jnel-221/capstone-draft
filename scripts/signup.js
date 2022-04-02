@@ -14,6 +14,7 @@ $("#sButton").click(function (e) {
   validateLastName();
   validateEmail();
   validatePassword();
+  confirmPassword();
 });
 
 //validate first name
@@ -105,8 +106,7 @@ function validatePassword(){
   let num = /\d/; //regex for numbers
   let special = /[@$!%*#?&]/; //regex for special characters
   let result = true;
-
-  console.log(password);
+  //console.log(password);
   if(password == ""){
     inputPass.addClass("inputError");
     $("#passwordError").html("Password cannot be blank.").addClass("errorText");
@@ -138,6 +138,28 @@ function validatePassword(){
   }
   return result;
 } 
+
+function confirmPassword(){
+  let password = inputPass.val();
+  let confirmPass = inputConfirmPass.val();
+  let result = true;
+
+  if(confirmPass == ""){
+    inputConfirmPass.addClass("inputError");
+    $("#confirmPassError").html("Please confirm your password.").addClass("errorText");
+    result = false;
+  }else if(password != confirmPass){
+    inputConfirmPass.addClass("inputError");
+    $("#confirmPassError").html("Passwords do not match.").addClass("errorText");
+    result = false;
+  }else{
+    inputConfirmPass.removeClass("inputError");
+    console.log(confirmPass+" "+password)
+    $("#confirmPassError").html("").removeClass("errorText");
+    result = true;
+  }
+  return result;
+}
 
 // function validatePassword(password, confirmPass) {
 //   console.log(
