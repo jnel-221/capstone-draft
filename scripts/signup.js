@@ -37,7 +37,7 @@ function validateFirstName() {
     result = false;
   } else if (firstName.match(exAlpha)) {
     inputFirstName.removeClass("inputError");
-    $("#firstNameError").html("").removeClass("textError");
+    $("#firstNameError").html("").removeClass("errorText");
     result = true;
   }
   return result;
@@ -64,7 +64,7 @@ function validateLastName() {
     result = false;
   } else if (lastName.match(exAlpha)) {
     inputLastName.removeClass("inputError");
-    $("#lastNameError").html("").removeClass("textError");
+    $("#lastNameError").html("").removeClass("errorText");
     result = true;
   }
   return result;
@@ -74,7 +74,7 @@ function validateLastName() {
 function validateEmail() {
   // console.log("email is: " + email);
   let email = inputEmail.val();
-  let ex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+  let ex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/; //regex to validate email address
   let result = true;
 
   if (email == "") {
