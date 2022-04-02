@@ -7,133 +7,95 @@ let inputConfirmPass = $("#confirmPass");
 let sButton = $("sButton");
 
 //event listener calls to validation functions.
-$("#sButton").click(function(e){
+$("#sButton").click(function (e) {
   e.preventDefault();
-   console.log("I'm in the sign-up form");
+
   validateFirstName();
   validateLastName();
+  validateEmail();
+});
 
-})
-
+//validate first name
 function validateFirstName() {
   let firstName = inputFirstName.val();
   let exNum = /\d/; //regex to find numbers in name;
-  let exAlpha = /^[A-Za-z]+$/ //regex to include all letters and ensure no space 
+  let exAlpha = /^[A-Za-z]+$/; //regex to include all letters and ensure no space
 
   let result = true;
   if (firstName == "") {
-   inputFirstName.addClass("inputError");
-   $("#firstNameError").html("First name cannot be blank.").addClass("errorText");
-   result = false;
-  }else if(firstName.match(exNum)){
+    inputFirstName.addClass("inputError");
+    $("#firstNameError")
+      .html("First name cannot be blank.")
+      .addClass("errorText");
+    result = false;
+  } else if (firstName.match(exNum)) {
     console.log("you entered numbers");
     inputFirstName.addClass("inputError");
-    $("#firstNameError").html("First name cannot contain a number").addClass("errorText");
+    $("#firstNameError")
+      .html("First name cannot contain a number")
+      .addClass("errorText");
     result = false;
-  }else if(firstName.match(exAlpha)){
+  } else if (firstName.match(exAlpha)) {
     inputFirstName.removeClass("inputError");
     $("#firstNameError").html("").removeClass("textError");
-    result = true
+    result = true;
   }
   return result;
 }
 
+//validate last name
 function validateLastName() {
   let lastName = inputLastName.val();
   let exNum = /\d/; //regex to find numbers in name;
-  let exAlpha = /^[A-Za-z]+$/ //regex to include all letters and ensure no space 
+  let exAlpha = /^[A-Za-z]+$/; //regex to include all letters and ensure no space
 
   let result = true;
   if (lastName == "") {
-   inputLastName.addClass("inputError");
-   $("#lastNameError").html("Last name cannot be blank.").addClass("errorText");
-   result = false;
-  }else if(lastName.match(exNum)){
     inputLastName.addClass("inputError");
-    $("#lastNameError").html("Last name cannot contain a number").addClass("errorText");
+    $("#lastNameError")
+      .html("Last name cannot be blank.")
+      .addClass("errorText");
     result = false;
-  }else if(lastName.match(exAlpha)){
+  } else if (lastName.match(exNum)) {
+    inputLastName.addClass("inputError");
+    $("#lastNameError")
+      .html("Last name cannot contain a number")
+      .addClass("errorText");
+    result = false;
+  } else if (lastName.match(exAlpha)) {
     inputLastName.removeClass("inputError");
     $("#lastNameError").html("").removeClass("textError");
-    result = true
+    result = true;
   }
   return result;
 }
 
-// let inputFirstName = document.getElementById("firstName");
-// let inputLastName = document.getElementById("lastName");
-// let inputEmail = document.getElementById("email");
-// let inputPass = document.getElementById("password");
-// let inputConfirmPass = document.getElementById("confirmPass");
-// let sButton = document.getElementById("sButton");
-// let pTag = document.createElement("p");
+//validate email
+function validateEmail() {
+  // console.log("email is: " + email);
+  let email = inputEmail.val();
+  let ex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+  let result = true;
 
-// sButton.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   validate();
-// });
+  if (email == "") {
+    inputEmail.addClass("inputError");
+    $("#emailError").html("Email cannot be blank.").addClass("errorText");
+    result = false;
+  } else if (!email.match(ex)) {
+    inputEmail.addClass("inputError");
+    $("#emailError")
+      .html("Please enter a valid email address.")
+      .addClass("errorText");
+    result = false;
+  } else {
+    inputEmail.removeClass("inputError");
+    $("#emailError").html("").removeClass("errorText");
+    console.log(email);
+    result = true;
+  }
 
-// function validate() {
-//   validateFirstName(inputFirstName.value);
-//   validateLastName(inputLastName.value);
-//   validateEmail(inputEmail.value);
-//   validatePassword(inputPass.value, inputConfirmPass.value);
-// }
-
-// function validateFirstName(firstName) {
-//   console.log("first name is: " + firstName);
-//   let ex = /\s/;
-//   if (firstName == "") {
-//     console.log("no string");
-//    // alert("You must enter your first name");
-//     inputFirstName.style.border = "3px solid red";
-//     pTag.innerHTML = "First name cannot be empty";
-//     inputFirstName.appendChild(pTag);
-//     inputFirstName.focus();
-
-
-//   } else if (firstName.match(ex)) {
-//    // alert("no spaces!");
-//     inputFirstName.style.border = "3px solid red";
-//     pTag.innerHTML = "First name cannot have spaces";
-//     inputFirstName.appendChild(pTag);
-//     inputFirstName.focus();
-    
-//     return false;
-//   }
-//   return true;
-// }
-
-// function validateLastName(lastName) {
-//   console.log("lastname is: " + lastName);
-//   if (lastName == "") {
-//     inputLastName.style.border = "3px solid red";
-//     pTag.innerHTML = "Last name cannot be empty";
-//     inputLastName.appendChild(pTag);
-//     inputLastName.focus();
-//     return false;
-//   }
-// }
-
-// function validateEmail(email) {
-//   console.log("email is: " + email);
-//   let ex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-//   if (email == "") {
-//     //change this to display red text border around field
-//     //and error message below input field
-//     inputEmail.style.border = "3px solid red";
-//     pTag.innerHTML = "Email cannot be empty.";
-//     inputEmail.appendChild(pTag);
-//     inputEmail.focus();
-//     return false;
-//   } else if (!email.match(ex)) {
-//     //alert("you must enter an email with the proper format");
-//     inputEmail.style.border = "3px solid red";
-//     pTag.innerHTML = "Please enter valid email.";
-//     inputEmail.appendChild(pTag);
-//     inputEmail.focus();
-//   }
-// }
+  return result;
+}
 
 // function validatePassword(password, confirmPass) {
 //   console.log(
@@ -174,7 +136,6 @@ function validateLastName() {
 //     return false;
 //   }
 
-
 //   if (confirmPass == "") {
 //     console.log("no confirm password entered");
 //     alert("You must confirm your password");
@@ -184,7 +145,7 @@ function validateLastName() {
 //     pTag.innerHTML="You must confirm your password";
 //     inputConfirmPass.appendChild(pTag);
 //     inputConfirmPass.focus();
-    
+
 //     return false;
 //   }
 
