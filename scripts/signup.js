@@ -36,8 +36,8 @@ $("#sButton").click(function (e) {
 //validate first name
 function validateFirstName() {
   let firstName = inputFirstName.val();
-  let exNum = /\d/; //regex to find numbers in name;
-  let exAlpha = /^[A-Za-z]+$/; //regex to include all letters and ensure no space
+  let regexNum = /\d/; //regex to find numbers in name;
+  let regexAlpha = /^[A-Za-z]+$/; //regex to include all letters and ensure no space
 
   let result = true;
   if (firstName == "") {
@@ -46,14 +46,14 @@ function validateFirstName() {
       .html("First name cannot be blank.")
       .addClass("errorText");
     result = false;
-  } else if (firstName.match(exNum)) {
+  } else if (firstName.match(regexNum)) {
     console.log("you entered numbers");
     inputFirstName.addClass("inputError");
     $("#firstNameError")
       .html("First name cannot contain a number")
       .addClass("errorText");
     result = false;
-  } else if (firstName.match(exAlpha)) {
+  } else if (firstName.match(regexAlpha)) {
     inputFirstName.removeClass("inputError");
     $("#firstNameError").html("").removeClass("errorText");
     result = true;
@@ -155,6 +155,7 @@ function validatePassword(){
   return result;
 } 
 
+//confirm password
 function confirmPassword(){
   let password = inputPass.val();
   let confirmPass = inputConfirmPass.val();

@@ -1,27 +1,3 @@
-/*  Colors for Site:
-#F46D25  Orange Red (main CTA color, buttons, logo
-#4B4b55  Dark Liver(grey) (possible text color on light backgrounds, dark background color)
-#53DCDC  Medium Turquoise  (links, accent borders, possible on-hover color for Orange Red)
-#F8F7F6 Cultured (white) (main page, white text for dark backgrounds
-#C83E4D  Brick Red  ---not sure yet for this one, maybe some small accent colors?
-*/
-
-
-/* Alternate color scheme turquoise and coral
-#fdfdfd	(253,253,253) white
-#ffc3a0	(255,195,160) light coral
-#ff8943	(255,137,67) dark coral
-#8bd6d6	(139,214,214) light turquoise
-#0dc9c9	(13,201,201) dark turquoise
- */
-
- /* 2nd ALternate color scheme pulled from photo
- #ff4f2a  red-orange
- #433c10 dark green-brown
- #A27835 caramel
- #FEF3DB  off-white
- #f9944f orange creamcicle
- */
 
  :root{
     --main-color: #F46D25;
