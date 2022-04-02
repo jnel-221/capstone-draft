@@ -44,6 +44,7 @@
                         placeholder="First Name"
                         name="firstName"
                       />
+                      <p id="firstNameError"></p>
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -56,6 +57,7 @@
                         placeholder="Last Name"
                         name="lastName"
                       />
+                      <p id="lastNameError"></p>
                     </div>
                   </div>
                 </div>
@@ -69,6 +71,7 @@
                     aria-describedby="emailHelp"
                     name="email"
                   />
+                  <p id="emailError"></p>
                   <div id="emailHelp" class="form-text">
                     We'll never share your email with anyone else.
                   </div>
@@ -76,6 +79,7 @@
                 <div class="mb-3">
                   <label for="password" class="form-label">Password</label>
                   <input type="password" class="form-control" id="password" />
+                  <p id="passwordError"></p>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label"
@@ -86,6 +90,7 @@
                     class="form-control"
                     id="confirmPass"
                   />
+                  <p id="confirmPassError"></p>
                 </div>
                 <center>
                   <button type="submit" class="btn" id="sButton">
