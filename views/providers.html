@@ -13,6 +13,10 @@
     />
     <link rel="stylesheet" href="../styles/style.css" />
     <script
+      src="https://kit.fontawesome.com/ae53138fc4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
@@ -25,9 +29,47 @@
     <script src="../scripts/api.js"></script>
   </head>
   <body>
+    <!-- navbar -->
+    <section id="header">
+      <!-- removed navbar-light and bg-light -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><i class="fa-duotone fa-trillium"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span><i class="fas fa-solid fa-bars"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+              <a class="nav-link" href="providers.html">Providers</a>
+              <a class="nav-link" href="signup.html">Sign Up</a>
+              <a class="nav-link" href="login.html">Log In</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!-- end navbar -->
+    <!-- begin main content -->
     <div class="bg">
       <div class="row">
-        <h1 class="text-center">Our Providers</h1>
+        <div class="class col-sm-12">
+          <h1 class="text-center">Hello Jello</h1>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-sm-10 m-auto">
           <table class="table" id="tbl-background">
             <thead>
@@ -47,5 +89,7 @@
         </div>
       </div>
     </div>
+
+    <!-- end main content -->
   </body>
 </html>
