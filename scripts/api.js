@@ -1,3 +1,5 @@
+
+//function calls random user api, call made in onload event
 function callRandomUserApi() {
   var queryURL = "https://randomuser.me/api/?results=10&nat=us&exc=login";
   $.ajax({
@@ -8,7 +10,7 @@ function callRandomUserApi() {
         console.log(data.Response);
       } else {
         console.log(data);
-        renderResults(data);
+        renderResults(data); //if successful, data sent to renderResults function.
       }
     },
     error: function (error) {
@@ -17,6 +19,7 @@ function callRandomUserApi() {
   });
 }
 
+//function receives JSON data from API, stores it in variables, injects it into html string literal and appends to table-body.
 function renderResults(response) {
   var results = response.results;
 
@@ -42,4 +45,6 @@ function renderResults(response) {
     $(".table_content").append(rowHTML);
   }
 }
+
+//listen for document ready, then run callRandomUserApi
 $(document).ready(callRandomUserApi());
