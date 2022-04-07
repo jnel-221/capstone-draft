@@ -17,6 +17,25 @@ html, body{
     margin: 0;
     height:100%; 
     font-family: 'Lato', sans-serif;
+    color:var(--dark-grey);
+}
+
+a,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+a:hover {
+    color: #f46d25 !important;
+}
+
+.nav-style {
+    /* background: linear-gradient(#4b4b55,turquoise); */
+    background: #53dcdc;
+
+    color: #f5f5f5;
 }
 
 .bg{
