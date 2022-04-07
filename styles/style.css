@@ -37,6 +37,9 @@ a:hover {
 
     color: #f5f5f5;
 }
+.fa-bars{
+     color:var(--pearl);
+ }
 
 .bg{
     background-image: url("../images/karim-ben-van-mKk2nnZ1EQk-unsplash.jpg");
